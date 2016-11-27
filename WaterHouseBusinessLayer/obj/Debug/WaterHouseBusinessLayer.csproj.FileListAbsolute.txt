@@ -1,0 +1,9 @@
+E:\MukeshData\Baroda\WebProjectTest\WaterHouseUsingMVC\WaterHouseBusinessLayer\bin\Debug\WaterHouseBusinessLayer.dll.config
+E:\MukeshData\Baroda\WebProjectTest\WaterHouseUsingMVC\WaterHouseBusinessLayer\bin\Debug\WaterHouseBusinessLayer.dll
+E:\MukeshData\Baroda\WebProjectTest\WaterHouseUsingMVC\WaterHouseBusinessLayer\bin\Debug\WaterHouseBusinessLayer.pdb
+E:\MukeshData\Baroda\WebProjectTest\WaterHouseUsingMVC\WaterHouseBusinessLayer\bin\Debug\EntityFramework.dll
+E:\MukeshData\Baroda\WebProjectTest\WaterHouseUsingMVC\WaterHouseBusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+E:\MukeshData\Baroda\WebProjectTest\WaterHouseUsingMVC\WaterHouseBusinessLayer\bin\Debug\EntityFramework.xml
+E:\MukeshData\Baroda\WebProjectTest\WaterHouseUsingMVC\WaterHouseBusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+E:\MukeshData\Baroda\WebProjectTest\WaterHouseUsingMVC\WaterHouseBusinessLayer\obj\Debug\WaterHouseBusinessLayer.dll
+E:\MukeshData\Baroda\WebProjectTest\WaterHouseUsingMVC\WaterHouseBusinessLayer\obj\Debug\WaterHouseBusinessLayer.pdb

@@ -1,0 +1,101 @@
+﻿@model WaterHouseBusinessLayer.Order
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Order</legend>
+
+        @Html.HiddenFor(model => model.ORDERNUMBER)
+
+        <div style="font-family: Arial">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.FIRSTNAME)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.FIRSTNAME)
+                @Html.ValidationMessageFor(model => model.FIRSTNAME)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.MIDDLENAME)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.MIDDLENAME)
+                @Html.ValidationMessageFor(model => model.MIDDLENAME)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LASTNAME)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LASTNAME)
+                @Html.ValidationMessageFor(model => model.LASTNAME)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.MOBILENO)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.MOBILENO)
+                @Html.ValidationMessageFor(model => model.MOBILENO)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ADDRESS)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ADDRESS)
+                @Html.ValidationMessageFor(model => model.ADDRESS)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.QTYICEBOTTLE)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.QTYICEBOTTLE)
+                @Html.ValidationMessageFor(model => model.QTYICEBOTTLE)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.QTYBTBOTTLE)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.QTYBTBOTTLE)
+                @Html.ValidationMessageFor(model => model.QTYBTBOTTLE)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.QTYPOUCH)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.QTYPOUCH)
+                @Html.ValidationMessageFor(model => model.QTYPOUCH)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ROOTID)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ROOTID)
+                @Html.ValidationMessageFor(model => model.ROOTID)
+            </div>
+        </div>
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

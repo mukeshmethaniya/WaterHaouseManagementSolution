@@ -1,0 +1,54 @@
+﻿@model MineralWaterPlantBL.Model.OrderedItem
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>OrderedItem</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OrderId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OrderId)
+            @Html.ValidationMessageFor(model => model.OrderId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductID)
+            @Html.ValidationMessageFor(model => model.ProductID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Quantity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Quantity)
+            @Html.ValidationMessageFor(model => model.Quantity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Discount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Discount)
+            @Html.ValidationMessageFor(model => model.Discount)
+        </div>
+
+
+    </fieldset>
+    <div>
+       <input type="submit" value="Create" />
+       
+    </div>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@

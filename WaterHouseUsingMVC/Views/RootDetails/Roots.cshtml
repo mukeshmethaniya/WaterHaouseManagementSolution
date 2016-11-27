@@ -1,0 +1,21 @@
+﻿@using WaterHouseUsingMVC.Models;
+@model List<WaterHouseUsingMVC.Models.Root>
+
+@{
+    ViewBag.Title = "Roots";
+}
+
+<h2>Roots</h2>
+<table>
+    @foreach(Root route in Model)
+    {
+    <tr>
+        <td>Root Name</td>
+    
+        <td>@Html.ActionLink(route.STATION, "Details", "RootDetails", new  { rootId = route.ROOT_ID }, null);   </td>
+    </tr> 
+       
+    }
+
+</table>
+

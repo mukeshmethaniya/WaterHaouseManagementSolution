@@ -1,0 +1,22 @@
+﻿@model WaterHouseUsingMVC.Models.Root
+
+@{
+    ViewBag.Title = "RootDetails";
+}
+
+<h2>RootDetails</h2>
+<table>
+    <tr>
+        <td>Root Name</td>
+
+        <td>@Html.ActionLink(@Model.ROOT_ID.ToString(), "Orders", "OrderDetails", new {rootId=Model.ROOT_ID },null);</td>
+    </tr>
+    <tr>
+        <td>Root Details</td>
+        <td>@Model.STATION</td>
+    </tr>
+
+    @*   <tr>
+        <td>@Html.ActionLink("Back To Order List","Orders","OrderDetails")</td>
+    </tr>*@
+</table>

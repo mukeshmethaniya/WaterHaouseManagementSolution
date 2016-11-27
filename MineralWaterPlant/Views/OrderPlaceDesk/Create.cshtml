@@ -1,0 +1,164 @@
+﻿@model MineralWaterPlantBL.Model.OrderPlaceDesk
+
+@{
+    ViewBag.Title = "Place Order For Customer";
+}
+
+<h2>Place Order For Customer</h2>
+<script type="text/javascript">
+    function AddOrderItem() {
+        var table = document.getElementById("orderItemTable");
+        //var row = table.insertRow(1);
+        //var cell1 = row.insertCell(0);
+        //var cell2 = row.insertCell(1);
+        //var cell3 = row.insertCell(2);
+        //var cell4 = row.insertCell(3);
+        //cell1.innerHTML = "1";
+        //cell2.innerHTML = "2";
+        //cell3.innerHTML = "3";
+        //cell4.innerHTML = "10";
+        var row = table.rows[0].cells[1].innerHTML = "23";
+        alert("Clicke2");
+
+    }
+</script>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/OrderPlaceJavaScript.js"></script>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset ng-app="orderPlace" ng-controller="orderPlaceController">
+        <legend>OrderPlaceDesk</legend>
+        <div>
+            {{ Message }}
+
+        </div>
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.Customer.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Customer.Name)
+            @Html.ValidationMessageFor(model => model.Customer.Name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Customer.MobileNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Customer.MobileNumber)
+            @Html.ValidationMessageFor(model => model.Customer.MobileNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Customer.Remark)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Customer.Remark)
+            @Html.ValidationMessageFor(model => model.Customer.Remark)
+        </div>*@
+
+
+        <div ng-include src="'../SharedView/_Customer.html'">
+        </div>
+
+
+        @* @Html.Partial("_OrderedItemCreate", new MineralWaterPlantBL.Model.OrderedItem());*@
+        <div>
+            <div>
+                <label>ProductName</label>
+                <div>
+                    @*
+                    <input type="text" ng-model="newItem.ProductID" />*@
+                    <select ng-model="selectedProduct" ng-options=" product.Name for product  in Products" ng-change="productSelectionChanged(selectedProduct)">
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label>Product ID</label>
+                <div>
+                    <label>{{ newOrderItemDetails.ProductID }}</label>
+                </div>
+            </div>
+
+            <div>
+                <label>Price</label>
+                <div>
+                    <input type="text" ng-model="newOrderItemDetails.Price" />
+                </div>
+
+            </div>
+            <div>
+                <label>Quantity</label>
+                <div>
+                    <input type="text" ng-model="newOrderItemDetails.Quantity" />
+                </div>
+
+            </div>
+            <div>
+                <label>Discount</label>
+                <div>
+                    <input type="text" ng-model="newOrderItemDetails.Discount" />
+                </div>
+            </div>
+            <p>
+                @*<input type="submit" value="addOrderItem" onclick="AddOrderItem()" />*@
+                <button type="button" id="details" ng-click="OnAddNewItemsForOrder(newOrderItemDetails)">ADD Item</button>
+            </p>
+
+        </div>
+        <div>
+            <table >
+                <thead>
+                    <tr>
+                        <th>ProductID</th>
+                        <th>ProductName</th>
+                        <th>PricePerUnit</th>
+                        <th>Quantity</th>
+                        <th>Discount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="ordedItem in orderedItems">
+                        <td>{{ordedItem.ProductID}}</td>
+                        <td>{{ordedItem.Name}}</td>
+                        <td>{{ordedItem.PricePerUnit}}</td>
+                        <td>{{ordedItem.Quantity}}</td>
+                        <td>{{ordedItem.Discount}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <label>SubTotal</label>
+            <div>
+                <label>  {{subTotal}}</label>
+            </div>
+        </div>
+         <div>
+            <label>Order Discount</label>
+            <div>
+                <input type="number" ng-model="discount" ng-change="calculateTotal()" />
+            </div>
+        </div>
+         <div>
+            <label>Total</label>
+            <div>
+                 <label>  {{total}}</label>
+            </div>
+        </div>
+
+        <p>
+            <input type="button" ng-click="SendData()" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

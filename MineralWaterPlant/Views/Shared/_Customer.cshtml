@@ -1,0 +1,70 @@
+﻿@*@model MineralWaterPlantBL.Model.OrderPlaceDesk
+
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    *@
+<fieldset>
+        <legend>Customer</legend>
+
+             <div  >
+                <label>Name</label>
+                <div>
+                    <input type="text" ng-model="customer.Name" />
+                </div>
+            </div>
+      @*  <div class="editor-label">
+            @Html.LabelFor(model => model.Customer.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Customer.Name)
+            @Html.ValidationMessageFor(model => model.Customer.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Customer.MobileNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Customer.MobileNumber)
+            @Html.ValidationMessageFor(model => model.Customer.MobileNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Customer.Address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Customer.Address)
+            @Html.ValidationMessageFor(model => model.Customer.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Customer.PrimaryRouteId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Customer.PrimaryRouteId)
+            @Html.ValidationMessageFor(model => model.Customer.PrimaryRouteId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Customer.SecondaryRouteId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Customer.SecondaryRouteId)
+            @Html.ValidationMessageFor(model => model.Customer.SecondaryRouteId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Customer.Remark)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Customer.Remark)
+            @Html.ValidationMessageFor(model => model.Customer.Remark)
+        </div>*@
+
+       
+    </fieldset>
+@*}*@
+

@@ -1,0 +1,47 @@
+﻿<fieldset>
+    <legend>Customer</legend>
+
+    <div>
+        <label>Name</label>
+        <div>
+            <input type="text" ng-model="customer.Name" />
+        </div>
+    </div>
+    <div>
+        <label>Mobile Number</label>
+        <div>
+            <input type="text" ng-model="customer.MobileNumber" />
+        </div>
+    </div>
+    <div>
+        <label>Address</label>
+        <div>
+            <input type="text" ng-model="customer.Address" />
+        </div>
+    </div>
+    <div>
+        <label>PrimaryRouteId</label>
+        <div>
+            <!--<input type="text" ng-model="customer.PrimaryRouteId" />-->
+            <select ng-model="customer.PrimaryRouteId" ng-options="route.Id as route.Name for route in Routes"></select>
+        </div>
+    </div>
+    <div>
+        <label>SecondaryRouteId</label>
+        <div>
+           <!-- <input type="text" ng-model="customer.SecondaryRouteId" />-->
+              <select ng-model="customer.SecondaryRouteId" ng-options="route.Id as route.Name for route in Routes"></select>
+        </div>
+    </div>
+    <div>
+        <label>Remark</label>
+        <div>
+            <input type="text" ng-model="customer.Remark" />
+        </div>
+    </div>
+
+
+
+</fieldset>
+
+

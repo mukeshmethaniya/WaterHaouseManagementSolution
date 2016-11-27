@@ -1,0 +1,81 @@
+﻿@model IEnumerable<WaterHouseBusinessLayer.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FIRSTNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MIDDLENAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LASTNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOBILENO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ADDRESS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QTYICEBOTTLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QTYBTBOTTLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QTYPOUCH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ROOTID)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FIRSTNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MIDDLENAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LASTNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOBILENO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ADDRESS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QTYICEBOTTLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QTYBTBOTTLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QTYPOUCH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ROOTID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ORDERNUMBER }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ORDERNUMBER }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ORDERNUMBER })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,25 @@
+﻿@model WaterHouseUsingMVC.Models.Order
+
+@{
+    ViewBag.Title = "Order Details";
+}
+
+<h2>Order Details</h2>
+
+<table>
+    <tr>
+        <td>Name</td>
+        <td>@Model.FIRSTNAME</td>
+    </tr>
+    <tr>
+        <td>Mobile Number</td>
+        <td>@Model.MOBILENO</td>
+    </tr>
+    <tr>
+        <td>Pouch Qty </td>
+        <td>@Model.QTYPOUCH</td>
+    </tr>
+    <tr>
+        <td>@Html.ActionLink("Back To Order List", "Orders", "OrderDetails", new  { rootId=@Model.ROOTID },null)</td>
+    </tr>
+</table>
