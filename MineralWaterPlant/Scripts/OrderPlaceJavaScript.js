@@ -138,4 +138,24 @@ var app = angular.module('orderPlace', []).controller('orderPlaceController', fu
         });
     };
     $scope.getProducts();
+
+    // In Controller
+    $scope.search = function (val) {
+
+        // fetch data
+    }
+
 });
+
+app.directive('search', function () {
+    return function ($scope, element) {
+        element.bind("keyup", function (event) {
+            var val = element.val();
+            if(val.length > 2) {
+                $scope.search(val);
+            }
+        });
+    };
+});
+
+

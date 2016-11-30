@@ -16,3 +16,13 @@ E:\GitHub\Angular\WaterHouseUsingMVC\MineralWaterPlantBL\bin\Debug\EntityFramewo
 E:\GitHub\Angular\WaterHouseUsingMVC\MineralWaterPlantBL\bin\Debug\EntityFramework.SqlServer.xml
 E:\GitHub\Angular\WaterHouseUsingMVC\MineralWaterPlantBL\obj\Debug\MineralWaterPlantBL.dll
 E:\GitHub\Angular\WaterHouseUsingMVC\MineralWaterPlantBL\obj\Debug\MineralWaterPlantBL.pdb
+E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\bin\Debug\MineralWaterPlantBL.dll.config
+E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\bin\Debug\MineralWaterPlantBL.dll
+E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\bin\Debug\MineralWaterPlantBL.pdb
+E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\bin\Debug\EntityFramework.dll
+E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\bin\Debug\EntityFramework.SqlServer.dll
+E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\bin\Debug\EntityFramework.xml
+E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\bin\Debug\EntityFramework.SqlServer.xml
+E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\obj\Debug\MineralWaterPlantBL.csprojResolveAssemblyReference.cache
+E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\obj\Debug\MineralWaterPlantBL.dll
+E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\obj\Debug\MineralWaterPlantBL.pdb
