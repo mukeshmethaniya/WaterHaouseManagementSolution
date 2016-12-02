@@ -1,0 +1,27 @@
+﻿@model MineralWaterPlantBL.Model.Customer
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/OrderPlaceJavaScript.js"></script>
+<script src="~/Scripts/DailyCustomerCreateScript.js"></script>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset ng-app="orderPlace" ng-controller="dailyCustomerCreateController">
+        <legend>Customer</legend>
+
+        <div ng-include src="'../SharedView/_Customer.html'"></div>
+        <p>
+           <input type="button" ng-click="SendData()" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -145,7 +145,8 @@ var app = angular.module('orderPlace', []).controller('orderPlaceController', fu
         // fetch data
     }
 
-});
+})
+;
 
 app.directive('search', function () {
     return function ($scope, element) {

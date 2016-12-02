@@ -23,6 +23,5 @@ E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\bin\Debug\EntityFram
 E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\bin\Debug\EntityFramework.SqlServer.dll
 E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\bin\Debug\EntityFramework.xml
 E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\bin\Debug\EntityFramework.SqlServer.xml
-E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\obj\Debug\MineralWaterPlantBL.csprojResolveAssemblyReference.cache
 E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\obj\Debug\MineralWaterPlantBL.dll
 E:\GitHub\WaterHaouseManagementSolution\MineralWaterPlantBL\obj\Debug\MineralWaterPlantBL.pdb

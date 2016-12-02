@@ -115,6 +115,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\OrderPlaceDeskController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RouteController.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\DailyCustomerCreateScript.js" />
     <Content Include="Scripts\OrderPlaceJavaScript.js" />
     <Content Include="Views\OrderPlaceDesk\HtmlPage1.htm" />
     <Content Include="Web.config" />
@@ -189,6 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SharedView\_Customer.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Customer\Create.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
