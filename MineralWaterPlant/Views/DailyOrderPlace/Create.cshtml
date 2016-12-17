@@ -1,0 +1,125 @@
+﻿@model MineralWaterPlantBL.Model.OrderPlaceDesk
+
+
+
+<h2>Daily Customer Order Place Desk</h2>
+
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/OrderPlaceJavaScript.js"></script>
+<script src="~/Scripts/DailyCustomerCreateScript.js"></script>
+<script src="~/Scripts/DailyOrderPlaceJavascript.js"></script>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset ng-app="orderPlace" ng-controller="dailyOrderPlaceController">
+        <legend>OrderPlaceDesk</legend>
+        <div>
+            {{ Message }}
+
+        </div>
+      
+
+        <div ng-include src="'../SharedView/_Customer.html'">
+        </div>
+
+
+       
+        <div>
+            <div>
+                <label>ProductName</label>
+                <div>
+                    @*
+                    <input type="text" ng-model="newItem.ProductID" />*@
+                    <select ng-model="selectedProduct" ng-options=" product.Name for product  in Products" ng-change="productSelectionChanged(selectedProduct)">
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label>Product ID</label>
+                <div>
+                    <label>{{ newOrderItemDetails.ProductID }}</label>
+                </div>
+            </div>
+
+            <div>
+                <label>Price</label>
+                <div>
+                    <input type="text" ng-model="newOrderItemDetails.Price" />
+                </div>
+
+            </div>
+            <div>
+                <label>Quantity</label>
+                <div>
+                    <input type="text" ng-model="newOrderItemDetails.Quantity" />
+                </div>
+
+            </div>
+            <div>
+                <label>Discount</label>
+                <div>
+                    <input type="text" ng-model="newOrderItemDetails.Discount" />
+                </div>
+            </div>
+            <p>
+                @*<input type="submit" value="addOrderItem" onclick="AddOrderItem()" />*@
+                <button type="button" id="details" ng-click="OnAddNewItemsForOrder(newOrderItemDetails)">ADD Item</button>
+            </p>
+
+        </div>
+        <div>
+            <table >
+                <thead>
+                    <tr>
+                        <th>ProductID</th>
+                        <th>ProductName</th>
+                        <th>PricePerUnit</th>
+                        <th>Quantity</th>
+                        <th>Discount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="ordedItem in orderedItems">
+                        <td>{{ordedItem.ProductID}}</td>
+                        <td>{{ordedItem.Name}}</td>
+                        <td>{{ordedItem.PricePerUnit}}</td>
+                        <td>{{ordedItem.Quantity}}</td>
+                        <td>{{ordedItem.Discount}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <label>SubTotal</label>
+            <div>
+                <label>  {{subTotal}}</label>
+            </div>
+        </div>
+         <div>
+            <label>Order Discount</label>
+            <div>
+                <input type="number" ng-model="discount" ng-change="calculateTotal()" />
+            </div>
+        </div>
+         <div>
+            <label>Total</label>
+            <div>
+                 <label>  {{total}}</label>
+            </div>
+        </div>
+
+        <p>
+            <input type="button" ng-click="SendData()" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

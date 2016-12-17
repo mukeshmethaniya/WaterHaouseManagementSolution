@@ -14,7 +14,9 @@ namespace MineralWaterPlant.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            MineralWaterPlantDbContext database = new MineralWaterPlantDbContext();
+            var customers = database.DailyCustomers;
+            return View(customers);
         }
 
         public ActionResult Create()
@@ -25,9 +27,22 @@ namespace MineralWaterPlant.Controllers
          [HttpPost]
         public ActionResult Create(Customer customer )
         {
+            MineralWaterPlantDbContext database = new MineralWaterPlantDbContext();
+             database.DailyCustomers.Add(customer);
+             database.SaveChanges();
             return View();
         }
 
+         public JsonResult GetAll(string custName)
+         {
+             MineralWaterPlantDbContext database = new MineralWaterPlantDbContext();
+             var customers = database.DailyCustomers.ToList();
+             if (custName.Length > 2)
+             {
+                 customers = customers.FindAll(x => x.Name.ToLower().Contains(custName.ToLower()));
+             }
+             return Json(customers, JsonRequestBehavior.AllowGet);
+         }
 
     }
 }

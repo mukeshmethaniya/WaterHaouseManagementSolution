@@ -35,10 +35,43 @@ namespace MineralWaterPlantBL.Model
                 RouteId = 1
             };
 
+            var customer = new Customer()
+            {
+                Name = "Shree Swaminarayan Surukul",
+                Address = "Dhrangadhra",
+                MobileNumber = "9876543490",
+                CustomerType = CustomerType.BT_Jug,
+                PrimaryRouteId = 1,
+                SecondaryRouteId = 1,
+                Remark = "Jay Swaminararayan"
+            };
+            context.DailyCustomers.Add(customer);
+
+       
+
+
+
             context.RoutePoints.Add(routeItem);
 
-            
 
+            var order = new Order()
+            {
+                CustomerId = 1,
+                ContactNumber = "987653490",
+                RouteId = 1,
+                Date = DateTime.Now,
+                SubTotal = 100,
+                Total = 100
+            };
+            context.DailyCustomerOrders.Add(order);
+            var orderedItem = new OrderedItem()
+            {
+                OrderId = 1,
+                ProductID = 1,
+                Quantity = 5,
+                PricePerUnit = 20
+            };
+            context.OrderedItems.Add(orderedItem);
          
 
             context.SaveChanges();

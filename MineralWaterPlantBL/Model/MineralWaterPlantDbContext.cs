@@ -15,5 +15,11 @@ namespace MineralWaterPlantBL.Model
 
         public DbSet<RoutePoint> RoutePoints { get; set; }
 
+        public DbSet<Customer> DailyCustomers { get; set; }
+
+        public DbSet<Order> DailyCustomerOrders { get; set; }
+
+        public DbSet<OrderedItem> OrderedItems { get; set; }
+
     }
 }

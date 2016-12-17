@@ -116,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\DailyOrderPlaceController.cs" />
     <Compile Include="Controllers\OrderPlaceDeskController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RouteController.cs" />
@@ -132,9 +133,12 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\DailyCustomerCreateScript.js" />
+    <Content Include="Scripts\DailyOrderPlaceJavascript.js" />
     <Content Include="Scripts\OrderPlaceJavaScript.js" />
     <Content Include="Views\OrderPlaceDesk\HtmlPage1.htm" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -194,6 +198,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Customer\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Customer\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DailyOrderPlace\Create.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

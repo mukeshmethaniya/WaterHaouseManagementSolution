@@ -1,6 +1,7 @@
 ﻿/// <reference path="OrderPlaceJavaScript.js" />
 app.controller('dailyCustomerCreateController', function ($scope, $http) {
 
+    $scope.custTypes = ["Mix", "AquaZeel", "BT_Jug"];
     $scope.customer = {
         Id: "1",
         CustomerType: "Mix",
@@ -12,6 +13,7 @@ app.controller('dailyCustomerCreateController', function ($scope, $http) {
         Remark: "Temp"
 
     }
+   
 
     $scope.getRoutes = function () {
         $http.get('/Route/GetAll')

@@ -1,16 +1,17 @@
 ﻿/// <reference path="angular.min.js" />
-var app = angular.module('orderPlace', []).controller('orderPlaceController', function ($scope,$http) {
+/// <reference path="OrderPlaceJavaScript.js" />
+app.controller('dailyOrderPlaceController', function ($scope, $http) {
     $scope.Message = "Testing 53AA";
     $scope.selectedProduct = null;
     $scope.newOrderItemDetails = new Object();
-
+    $scope.custTypes = ["Mix", "AquaZeel", "BT_Jug"];
     $scope.subTotal = 0;
     $scope.discount = 0;
     $scope.total = 0;
-
+    $scope.customers = [];
     var orderedItemA =
          {
-             OrderId:"1",
+             OrderId: "1",
              ProductID: "1",
              Quantity: "1",
              Discount: "6"
@@ -18,14 +19,14 @@ var app = angular.module('orderPlace', []).controller('orderPlaceController', fu
     $scope.OrderedItemB = orderedItemA;
 
     $scope.customer = {
-        Id:"1",
-        CustomerType:"Mix",
-        Name:"ABC",
-        MobileNumber:"9876543210",
-        Address:"Bharada",
-        PrimaryRouteId:1,
-        SecondaryRouteId:1,
-        Remark:"Temp"
+        Id: "1",
+        CustomerType: "Mix",
+        Name: "ABC",
+        MobileNumber: "9876543210",
+        Address: "Bharada",
+        PrimaryRouteId: 1,
+        SecondaryRouteId: 1,
+        Remark: "Temp"
 
     }
     $scope.orderedItems = [];
@@ -43,10 +44,10 @@ var app = angular.module('orderPlace', []).controller('orderPlaceController', fu
 
         var clonedNewOrderedItem =
          {
-             OrderId:"1",
+             OrderId: "1",
              ProductID: newOrderedItem.ProductID,
              Name: newOrderedItem.Name,
-             PricePerUnit:newOrderedItem.Price,
+             PricePerUnit: newOrderedItem.Price,
              Quantity: newOrderedItem.Quantity,
              Discount: newOrderedItem.Discount
          };
@@ -60,7 +61,7 @@ var app = angular.module('orderPlace', []).controller('orderPlaceController', fu
             tempSubTotal = tempSubTotal + value.Quantity * value.PricePerUnit;
         });
         $scope.subTotal = tempSubTotal;
-        $scope.total = $scope.subTotal- $scope.discount;
+        $scope.total = $scope.subTotal - $scope.discount;
     };
 
     $scope.SendData = function () {
@@ -74,7 +75,7 @@ var app = angular.module('orderPlace', []).controller('orderPlaceController', fu
                 Id: 1,
                 CustomerId: $scope.customer.Id,
                 RouteId: $scope.customer.RouteId,
-                SubTotal:$scope.subTotal,
+                SubTotal: $scope.subTotal,
                 Discount: $scope.discount,
                 Total: $scope.total,
                 Date: new Date(),
@@ -129,45 +130,62 @@ var app = angular.module('orderPlace', []).controller('orderPlaceController', fu
         .success(function (data, status, headers, config) {
             //debugger;
             $scope.Products = data;
-           
+
         })
         .error(function (data, status, headers, config) {
             $scope.message = 'Unexpected Error while loading data!!';
             $scope.result = "color-red";
-          
+
         });
     };
     $scope.getProducts();
 
     // In Controller
-    $scope.search = function (val) {
+    $scope.searchCustomerByName = function (val) {
 
         // fetch data
+        $http.get('/Customer/GetAll', { params: { custName: val } })
+        .success(function (data, status, headers, config) {
+            //debugger;
+            if(data.length>0)
+                $scope.customers = data;
+
+        })
+        .error(function (data, status, headers, config) {
+            $scope.message = 'Unexpected Error while loading data!!';
+            $scope.result = "color-red";
+
+        });
+
+    }
+    $scope.searchCustomerByName("");
+    $scope.searchCustomerByMobileNumber= function (val) {
+
+        // fetch data
+
     }
 
 });
 
 
-//app.directive('DailyCustomerSearchByName', function () {
-//    return function ($scope, element) {
-//        element.bind("keyup", function (event) {
-//            var val = element.val();
-//            if(val.length > 2) {
-//                $scope.search(val);
-//            }
-//        });
-//    };
-//});
+app.directive('dailycustomersearchbyname', function () {
+    return function ($scope, element) {
+        element.bind("keyup", function (event) {
+            var val = element.val();
+            if (val.length > 2) {
+                $scope.searchCustomerByName(val);
+            }
+        });
+    };
+});
 
-//app.directive('DailyCustomerSearchByMobileNumber', function () {
-//    return function ($scope, element) {
-//        element.bind("keyup", function (event) {
-//            var val = element.val();
-//            if (val.length > 2) {
-//                $scope.search(val);
-//            }
-//        });
-//    };
-//});
-
-
+app.directive('dailyCustomerSearchByMobileNumber', function () {
+    return function ($scope, element) {
+        element.bind("keyup", function (event) {
+            var val = element.val();
+            if (val.length > 2) {
+                $scope.search(val);
+            }
+        });
+    };
+});

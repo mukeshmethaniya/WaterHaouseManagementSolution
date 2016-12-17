@@ -4,19 +4,27 @@
     <div>
         <label>Name</label>
         <div>
-            <input type="text" ng-model="customer.Name" search />
+            <!--<input type="text" ng-model="customer.Name" dailycustomersearchbyname />-->
+                <select ng-model="customer" ng-options="cust as cust.Name for cust in customers" dailycustomersearchbyname ></select>
         </div>
     </div>
     <div>
         <label>Mobile Number</label>
         <div>
-            <input type="text" ng-model="customer.MobileNumber" />
+            <input type="text" ng-model="customer.MobileNumber" dailyCustomerSearchByMobileNumber/>
         </div>
     </div>
     <div>
         <label>Address</label>
         <div>
             <input type="text" ng-model="customer.Address" />
+        </div>
+    </div>
+    <div>
+        <label>Customer Type</label>
+        <div>
+      <!--      <input type="text" ng-model="customer.CustomerType" />-->
+            <select ng-model="customer.CustomerType" ng-options="custType as custType for custType in custTypes"></select>
         </div>
     </div>
     <div>
