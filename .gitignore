@@ -9,3 +9,14 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+
+MineralWaterPlant/bin
+MineralWaterPlant/obj
+MineralWaterPlant/Global
+MineralWaterPlant/Global.asax.cs
+MineralWaterPlant/MineralWaterPlant
+MineralWaterPlant/MineralWaterPlant.csproj
+MineralWaterPlant/packages
+MineralWaterPlant/Web
+MineralWaterPlant/Web.Debug
+MineralWaterPlant/Web.Release
